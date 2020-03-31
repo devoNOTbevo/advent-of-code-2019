@@ -29,7 +29,7 @@ func getSumFromRange(arr []int) int {
 }
 
 func getInputs() []int {
-	dat, err := ioutil.ReadFile("../inputs/day-one-input.txt")
+	dat, err := ioutil.ReadFile("inputs.txt")
 	if err != nil {
 		panic(err)
 	}
