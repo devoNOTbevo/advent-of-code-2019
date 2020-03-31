@@ -1,15 +1,12 @@
 package main
 
 import (
+	"advent-of-code-2019/common"
 	"fmt"
-	"io/ioutil"
-	"log"
-	"strconv"
-	"strings"
 )
 
 func main() {
-	inputs := getInputs()
+	inputs := common.GetNumInputs(",")
 	fmt.Printf("%v", inputs)
 	readOpscode(inputs)
 }
@@ -36,20 +33,3 @@ func min(a, b int) int {
 	return b
 }
 
-func getInputs() []int {
-	dat, err := ioutil.ReadFile("inputs.txt")
-	if err != nil {
-		panic(err)
-	}
-	split := strings.Split(string(dat), ",")
-	returnArr := []int{}
-	for _, element := range split {
-		i, err := strconv.Atoi(element)
-		if err != nil {
-			log.Fatal(err)
-		}
-		returnArr = append(returnArr, i)
-	}
-
-	return returnArr
-}
